@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор НДС</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scr.js" defer></script>
+</head>
+<body>
+  <main class="calculator">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Расчёт стоимости и налога</p>
+        <h1>Калькулятор НДС</h1>
+        <p class="intro">Введите количество и цену за штуку с НДС. Сумма налога будет рассчитана из выбранной ставки.</p>
+      </div>
+      <button class="add-button" id="add-row" type="button"><span aria-hidden="true">＋</span> Добавить строку</button>
+    </header>
+
+    <section class="table-card" aria-label="Позиции для расчёта НДС">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Количество, шт.</th>
+              <th scope="col">Цена с НДС за шт.</th>
+              <th scope="col">Ставка НДС</th>
+              <th scope="col">Сумма с НДС</th>
+              <th scope="col">Сумма НДС</th>
+              <th scope="col"><span class="visually-hidden">Действия</span></th>
+            </tr>
+          </thead>
+          <tbody id="items"></tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <span id="row-count">Позиций: 0</span>
+        <button class="text-button" id="add-row-bottom" type="button">＋ Добавить позицию</button>
+      </div>
+    </section>
+
+    <section class="summary" aria-label="Итоги">
+      <div class="summary-item"><span>Итого с НДС</span><strong id="grand-total">0,00 ₽</strong></div>
+      <div class="summary-item tax-summary"><span>В том числе НДС</span><strong id="grand-vat">0,00 ₽</strong></div>
+    </section>
+    <p class="hint">Для цены, уже включающей НДС: сумма налога = сумма с НДС × ставка ÷ (100 + ставка).</p>
+  </main>
+</body>
+</html>
